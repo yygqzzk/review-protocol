@@ -14,10 +14,18 @@ service Business {
     // 商家回复评论
     rpc ReplyReview(ReplyReviewReq) returns (ReplyReviewRsp) {
         option (google.api.http) = {
-            post: "business/v1/review/reply",
+            post: "b/v1/review/reply",
             body: "*"
         };
     };
+
+    // 商家申诉用户评价
+    rpc AppealReview(AppealReviewReq) returns (AppealReviewRsp) {
+        option (google.api.http) = {
+            post: "b/v1/review/appeal",
+            body: "*"
+        };
+    }
     
 }
 
@@ -35,4 +43,17 @@ message ReplyReviewRsp {
 	int64 replyId = 1;	// 回复评价ID
 }
 
+// AppealReviewRequest 申诉评价的请求参数
+message AppealReviewReq{
+	int64 reviewID = 1 [(validate.rules).int64 = {gt: 0}];
+	int64 storeID = 2 [(validate.rules).int64 = {gt: 0}];
+	string reason = 3 [(validate.rules).string = {min_len: 2, max_len:200}];
+	string content = 4 [(validate.rules).string = {min_len: 2, max_len:200}];
+	string picInfo = 5;
+	string videoInfo = 6;
+}
+
+message AppealReviewRsp{
+    int64 appealID = 1;
+}
 

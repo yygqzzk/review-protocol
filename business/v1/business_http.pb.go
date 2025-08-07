@@ -19,16 +19,20 @@ var _ = binding.EncodeURL
 
 const _ = http.SupportPackageIsVersion1
 
+const OperationBusinessAppealReview = "/api.business.v1.Business/AppealReview"
 const OperationBusinessReplyReview = "/api.business.v1.Business/ReplyReview"
 
 type BusinessHTTPServer interface {
+	// AppealReview 商家申诉用户评价
+	AppealReview(context.Context, *AppealReviewReq) (*AppealReviewRsp, error)
 	// ReplyReview 商家回复评论
 	ReplyReview(context.Context, *ReplyReviewReq) (*ReplyReviewRsp, error)
 }
 
 func RegisterBusinessHTTPServer(s *http.Server, srv BusinessHTTPServer) {
 	r := s.Route("/")
-	r.POST("business/v1/review/reply", _Business_ReplyReview0_HTTP_Handler(srv))
+	r.POST("b/v1/review/reply", _Business_ReplyReview0_HTTP_Handler(srv))
+	r.POST("b/v1/review/appeal", _Business_AppealReview0_HTTP_Handler(srv))
 }
 
 func _Business_ReplyReview0_HTTP_Handler(srv BusinessHTTPServer) func(ctx http.Context) error {
@@ -53,7 +57,30 @@ func _Business_ReplyReview0_HTTP_Handler(srv BusinessHTTPServer) func(ctx http.C
 	}
 }
 
+func _Business_AppealReview0_HTTP_Handler(srv BusinessHTTPServer) func(ctx http.Context) error {
+	return func(ctx http.Context) error {
+		var in AppealReviewReq
+		if err := ctx.Bind(&in); err != nil {
+			return err
+		}
+		if err := ctx.BindQuery(&in); err != nil {
+			return err
+		}
+		http.SetOperation(ctx, OperationBusinessAppealReview)
+		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
+			return srv.AppealReview(ctx, req.(*AppealReviewReq))
+		})
+		out, err := h(ctx, &in)
+		if err != nil {
+			return err
+		}
+		reply := out.(*AppealReviewRsp)
+		return ctx.Result(200, reply)
+	}
+}
+
 type BusinessHTTPClient interface {
+	AppealReview(ctx context.Context, req *AppealReviewReq, opts ...http.CallOption) (rsp *AppealReviewRsp, err error)
 	ReplyReview(ctx context.Context, req *ReplyReviewReq, opts ...http.CallOption) (rsp *ReplyReviewRsp, err error)
 }
 
@@ -65,9 +92,22 @@ func NewBusinessHTTPClient(client *http.Client) BusinessHTTPClient {
 	return &BusinessHTTPClientImpl{client}
 }
 
+func (c *BusinessHTTPClientImpl) AppealReview(ctx context.Context, in *AppealReviewReq, opts ...http.CallOption) (*AppealReviewRsp, error) {
+	var out AppealReviewRsp
+	pattern := "b/v1/review/appeal"
+	path := binding.EncodeURL(pattern, in, false)
+	opts = append(opts, http.Operation(OperationBusinessAppealReview))
+	opts = append(opts, http.PathTemplate(pattern))
+	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &out, nil
+}
+
 func (c *BusinessHTTPClientImpl) ReplyReview(ctx context.Context, in *ReplyReviewReq, opts ...http.CallOption) (*ReplyReviewRsp, error) {
 	var out ReplyReviewRsp
-	pattern := "business/v1/review/reply"
+	pattern := "b/v1/review/reply"
 	path := binding.EncodeURL(pattern, in, false)
 	opts = append(opts, http.Operation(OperationBusinessReplyReview))
 	opts = append(opts, http.PathTemplate(pattern))
