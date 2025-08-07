@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package api.business.v1;
+
+import "google/api/annotations.proto";
+import "validate/validate.proto";
+
+option go_package = "github.com/yygqzzk/review-b/api/business/v1;v1";
+option java_multiple_files = true;
+option java_package = "api.business.v1";
+
+
+service Business {
+    // 商家回复评论
+    rpc ReplyReview(ReplyReviewReq) returns (ReplyReviewRsp) {
+        option (google.api.http) = {
+            post: "business/v1/review/reply",
+            body: "*"
+        };
+    };
+    
+}
+
+// 回复评价请求
+message ReplyReviewReq {
+	int64 reviewId = 1 [(validate.rules).int64 = {gt: 0}];	// 评价ID
+	int64 storeId = 2 [(validate.rules).int64 = {gt: 0}];	// 商家ID
+	string content = 3 [(validate.rules).string = {min_len: 2, max_len: 255}];	// 回复内容
+	string picInfo = 4;	// 回复图片
+	string videoInfo = 5;	// 回复视频
+}
+
+// 回复评价响应
+message ReplyReviewRsp {
+	int64 replyId = 1;	// 回复评价ID
+}
+
+
