@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v6.31.1
-// source: operation/v1/opertation.proto
+// source: api/operation/v1/opertation.proto
 
 package v1
 
@@ -36,7 +36,7 @@ type AuditReviewReq struct {
 
 func (x *AuditReviewReq) Reset() {
 	*x = AuditReviewReq{}
-	mi := &file_operation_v1_opertation_proto_msgTypes[0]
+	mi := &file_api_operation_v1_opertation_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48,7 +48,7 @@ func (x *AuditReviewReq) String() string {
 func (*AuditReviewReq) ProtoMessage() {}
 
 func (x *AuditReviewReq) ProtoReflect() protoreflect.Message {
-	mi := &file_operation_v1_opertation_proto_msgTypes[0]
+	mi := &file_api_operation_v1_opertation_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -61,7 +61,7 @@ func (x *AuditReviewReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuditReviewReq.ProtoReflect.Descriptor instead.
 func (*AuditReviewReq) Descriptor() ([]byte, []int) {
-	return file_operation_v1_opertation_proto_rawDescGZIP(), []int{0}
+	return file_api_operation_v1_opertation_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *AuditReviewReq) GetReviewID() int64 {
@@ -107,7 +107,7 @@ type AuditReviewRsp struct {
 
 func (x *AuditReviewRsp) Reset() {
 	*x = AuditReviewRsp{}
-	mi := &file_operation_v1_opertation_proto_msgTypes[1]
+	mi := &file_api_operation_v1_opertation_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -119,7 +119,7 @@ func (x *AuditReviewRsp) String() string {
 func (*AuditReviewRsp) ProtoMessage() {}
 
 func (x *AuditReviewRsp) ProtoReflect() protoreflect.Message {
-	mi := &file_operation_v1_opertation_proto_msgTypes[1]
+	mi := &file_api_operation_v1_opertation_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -132,7 +132,7 @@ func (x *AuditReviewRsp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuditReviewRsp.ProtoReflect.Descriptor instead.
 func (*AuditReviewRsp) Descriptor() ([]byte, []int) {
-	return file_operation_v1_opertation_proto_rawDescGZIP(), []int{1}
+	return file_api_operation_v1_opertation_proto_rawDescGZIP(), []int{1}
 }
 
 type AuditAppealReq struct {
@@ -149,7 +149,7 @@ type AuditAppealReq struct {
 
 func (x *AuditAppealReq) Reset() {
 	*x = AuditAppealReq{}
-	mi := &file_operation_v1_opertation_proto_msgTypes[2]
+	mi := &file_api_operation_v1_opertation_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -161,7 +161,7 @@ func (x *AuditAppealReq) String() string {
 func (*AuditAppealReq) ProtoMessage() {}
 
 func (x *AuditAppealReq) ProtoReflect() protoreflect.Message {
-	mi := &file_operation_v1_opertation_proto_msgTypes[2]
+	mi := &file_api_operation_v1_opertation_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -174,7 +174,7 @@ func (x *AuditAppealReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuditAppealReq.ProtoReflect.Descriptor instead.
 func (*AuditAppealReq) Descriptor() ([]byte, []int) {
-	return file_operation_v1_opertation_proto_rawDescGZIP(), []int{2}
+	return file_api_operation_v1_opertation_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *AuditAppealReq) GetAppealID() int64 {
@@ -228,7 +228,7 @@ type AuditAppealRsp struct {
 
 func (x *AuditAppealRsp) Reset() {
 	*x = AuditAppealRsp{}
-	mi := &file_operation_v1_opertation_proto_msgTypes[3]
+	mi := &file_api_operation_v1_opertation_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -240,7 +240,7 @@ func (x *AuditAppealRsp) String() string {
 func (*AuditAppealRsp) ProtoMessage() {}
 
 func (x *AuditAppealRsp) ProtoReflect() protoreflect.Message {
-	mi := &file_operation_v1_opertation_proto_msgTypes[3]
+	mi := &file_api_operation_v1_opertation_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -253,14 +253,14 @@ func (x *AuditAppealRsp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuditAppealRsp.ProtoReflect.Descriptor instead.
 func (*AuditAppealRsp) Descriptor() ([]byte, []int) {
-	return file_operation_v1_opertation_proto_rawDescGZIP(), []int{3}
+	return file_api_operation_v1_opertation_proto_rawDescGZIP(), []int{3}
 }
 
-var File_operation_v1_opertation_proto protoreflect.FileDescriptor
+var File_api_operation_v1_opertation_proto protoreflect.FileDescriptor
 
-const file_operation_v1_opertation_proto_rawDesc = "" +
+const file_api_operation_v1_opertation_proto_rawDesc = "" +
 	"\n" +
-	"\x1doperation/v1/opertation.proto\x12\x10api.operation.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17validate/validate.proto\"\xcd\x01\n" +
+	"!api/operation/v1/opertation.proto\x12\x10api.operation.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17validate/validate.proto\"\xcd\x01\n" +
 	"\x0eAuditReviewReq\x12#\n" +
 	"\breviewID\x18\x01 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\breviewID\x12\x1f\n" +
 	"\x06status\x18\x02 \x01(\x05B\a\xfaB\x04\x1a\x02 \x00R\x06status\x12\x1f\n" +
@@ -286,25 +286,25 @@ const file_operation_v1_opertation_proto_rawDesc = "" +
 	"\x10api.operation.v1P\x01Z\x1creview-o/api/operation/v1;v1b\x06proto3"
 
 var (
-	file_operation_v1_opertation_proto_rawDescOnce sync.Once
-	file_operation_v1_opertation_proto_rawDescData []byte
+	file_api_operation_v1_opertation_proto_rawDescOnce sync.Once
+	file_api_operation_v1_opertation_proto_rawDescData []byte
 )
 
-func file_operation_v1_opertation_proto_rawDescGZIP() []byte {
-	file_operation_v1_opertation_proto_rawDescOnce.Do(func() {
-		file_operation_v1_opertation_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_operation_v1_opertation_proto_rawDesc), len(file_operation_v1_opertation_proto_rawDesc)))
+func file_api_operation_v1_opertation_proto_rawDescGZIP() []byte {
+	file_api_operation_v1_opertation_proto_rawDescOnce.Do(func() {
+		file_api_operation_v1_opertation_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_api_operation_v1_opertation_proto_rawDesc), len(file_api_operation_v1_opertation_proto_rawDesc)))
 	})
-	return file_operation_v1_opertation_proto_rawDescData
+	return file_api_operation_v1_opertation_proto_rawDescData
 }
 
-var file_operation_v1_opertation_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_operation_v1_opertation_proto_goTypes = []any{
+var file_api_operation_v1_opertation_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_api_operation_v1_opertation_proto_goTypes = []any{
 	(*AuditReviewReq)(nil), // 0: api.operation.v1.AuditReviewReq
 	(*AuditReviewRsp)(nil), // 1: api.operation.v1.AuditReviewRsp
 	(*AuditAppealReq)(nil), // 2: api.operation.v1.AuditAppealReq
 	(*AuditAppealRsp)(nil), // 3: api.operation.v1.AuditAppealRsp
 }
-var file_operation_v1_opertation_proto_depIdxs = []int32{
+var file_api_operation_v1_opertation_proto_depIdxs = []int32{
 	0, // 0: api.operation.v1.Operation.AuditReview:input_type -> api.operation.v1.AuditReviewReq
 	2, // 1: api.operation.v1.Operation.AuditAppeal:input_type -> api.operation.v1.AuditAppealReq
 	1, // 2: api.operation.v1.Operation.AuditReview:output_type -> api.operation.v1.AuditReviewRsp
@@ -316,28 +316,28 @@ var file_operation_v1_opertation_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_operation_v1_opertation_proto_init() }
-func file_operation_v1_opertation_proto_init() {
-	if File_operation_v1_opertation_proto != nil {
+func init() { file_api_operation_v1_opertation_proto_init() }
+func file_api_operation_v1_opertation_proto_init() {
+	if File_api_operation_v1_opertation_proto != nil {
 		return
 	}
-	file_operation_v1_opertation_proto_msgTypes[0].OneofWrappers = []any{}
-	file_operation_v1_opertation_proto_msgTypes[2].OneofWrappers = []any{}
+	file_api_operation_v1_opertation_proto_msgTypes[0].OneofWrappers = []any{}
+	file_api_operation_v1_opertation_proto_msgTypes[2].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_operation_v1_opertation_proto_rawDesc), len(file_operation_v1_opertation_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_api_operation_v1_opertation_proto_rawDesc), len(file_api_operation_v1_opertation_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_operation_v1_opertation_proto_goTypes,
-		DependencyIndexes: file_operation_v1_opertation_proto_depIdxs,
-		MessageInfos:      file_operation_v1_opertation_proto_msgTypes,
+		GoTypes:           file_api_operation_v1_opertation_proto_goTypes,
+		DependencyIndexes: file_api_operation_v1_opertation_proto_depIdxs,
+		MessageInfos:      file_api_operation_v1_opertation_proto_msgTypes,
 	}.Build()
-	File_operation_v1_opertation_proto = out.File
-	file_operation_v1_opertation_proto_goTypes = nil
-	file_operation_v1_opertation_proto_depIdxs = nil
+	File_api_operation_v1_opertation_proto = out.File
+	file_api_operation_v1_opertation_proto_goTypes = nil
+	file_api_operation_v1_opertation_proto_depIdxs = nil
 }
