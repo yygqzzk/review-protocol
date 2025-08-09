@@ -74,14 +74,14 @@ service Review {
 message CreateReviewReq {
 	int64 userId = 1 [(validate.rules).int64 = {gt: 0}]; 		// 用户ID 
 	int64 orderId = 2 [(validate.rules).int64 = {gt: 0}];		// 订单ID
-	int32 score = 3 [(validate.rules).int32 = {in: [0, 1, 2, 3, 4, 5]}];		// 评分
-	int32 serviceScore = 4 [(validate.rules).int32 = {in: [0, 1, 2, 3, 4, 5]}];	// 服务评分
-	int32 expressScore = 5 [(validate.rules).int32 = {in: [0, 1, 2, 3, 4, 5]}];	// 物流评分
-	string content = 6 [(validate.rules).string = {min_len: 8, max_len: 255}];		// 评价内容
-	string picInfo = 7 ;		// 评价图片
-	string videoInfo = 8;	// 评价视频
-	string voiceInfo = 9;	// 评价语音
-	bool anonymous = 10;	// 是否匿名
+	int64 storeID = 3 [(validate.rules).int64 = {gt: 0}];		// 商家ID
+	int32 score = 4 [(validate.rules).int32 = {in: [0, 1, 2, 3, 4, 5]}];		// 评分
+	int32 serviceScore = 5 [(validate.rules).int32 = {in: [0, 1, 2, 3, 4, 5]}];	// 服务评分
+	int32 expressScore = 6 [(validate.rules).int32 = {in: [0, 1, 2, 3, 4, 5]}];	// 物流评分
+	string content = 7 [(validate.rules).string = {min_len: 8, max_len: 255}];		// 评价内容
+	string picInfo = 8 ;		// 评价图片
+	string videoInfo = 9;	// 评价视频
+	bool anonymous = 11;	// 是否匿名
 }
 
 // 创建评价响应

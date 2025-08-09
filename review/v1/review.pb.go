@@ -28,14 +28,14 @@ type CreateReviewReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        int64                  `protobuf:"varint,1,opt,name=userId,proto3" json:"userId,omitempty"`             // 用户ID
 	OrderId       int64                  `protobuf:"varint,2,opt,name=orderId,proto3" json:"orderId,omitempty"`           // 订单ID
-	Score         int32                  `protobuf:"varint,3,opt,name=score,proto3" json:"score,omitempty"`               // 评分
-	ServiceScore  int32                  `protobuf:"varint,4,opt,name=serviceScore,proto3" json:"serviceScore,omitempty"` // 服务评分
-	ExpressScore  int32                  `protobuf:"varint,5,opt,name=expressScore,proto3" json:"expressScore,omitempty"` // 物流评分
-	Content       string                 `protobuf:"bytes,6,opt,name=content,proto3" json:"content,omitempty"`            // 评价内容
-	PicInfo       string                 `protobuf:"bytes,7,opt,name=picInfo,proto3" json:"picInfo,omitempty"`            // 评价图片
-	VideoInfo     string                 `protobuf:"bytes,8,opt,name=videoInfo,proto3" json:"videoInfo,omitempty"`        // 评价视频
-	VoiceInfo     string                 `protobuf:"bytes,9,opt,name=voiceInfo,proto3" json:"voiceInfo,omitempty"`        // 评价语音
-	Anonymous     bool                   `protobuf:"varint,10,opt,name=anonymous,proto3" json:"anonymous,omitempty"`      // 是否匿名
+	StoreID       int64                  `protobuf:"varint,3,opt,name=storeID,proto3" json:"storeID,omitempty"`           // 商家ID
+	Score         int32                  `protobuf:"varint,4,opt,name=score,proto3" json:"score,omitempty"`               // 评分
+	ServiceScore  int32                  `protobuf:"varint,5,opt,name=serviceScore,proto3" json:"serviceScore,omitempty"` // 服务评分
+	ExpressScore  int32                  `protobuf:"varint,6,opt,name=expressScore,proto3" json:"expressScore,omitempty"` // 物流评分
+	Content       string                 `protobuf:"bytes,7,opt,name=content,proto3" json:"content,omitempty"`            // 评价内容
+	PicInfo       string                 `protobuf:"bytes,8,opt,name=picInfo,proto3" json:"picInfo,omitempty"`            // 评价图片
+	VideoInfo     string                 `protobuf:"bytes,9,opt,name=videoInfo,proto3" json:"videoInfo,omitempty"`        // 评价视频
+	Anonymous     bool                   `protobuf:"varint,11,opt,name=anonymous,proto3" json:"anonymous,omitempty"`      // 是否匿名
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -84,6 +84,13 @@ func (x *CreateReviewReq) GetOrderId() int64 {
 	return 0
 }
 
+func (x *CreateReviewReq) GetStoreID() int64 {
+	if x != nil {
+		return x.StoreID
+	}
+	return 0
+}
+
 func (x *CreateReviewReq) GetScore() int32 {
 	if x != nil {
 		return x.Score
@@ -122,13 +129,6 @@ func (x *CreateReviewReq) GetPicInfo() string {
 func (x *CreateReviewReq) GetVideoInfo() string {
 	if x != nil {
 		return x.VideoInfo
-	}
-	return ""
-}
-
-func (x *CreateReviewReq) GetVoiceInfo() string {
-	if x != nil {
-		return x.VoiceInfo
 	}
 	return ""
 }
@@ -982,20 +982,19 @@ var File_review_v1_review_proto protoreflect.FileDescriptor
 
 const file_review_v1_review_proto_rawDesc = "" +
 	"\n" +
-	"\x16review/v1/review.proto\x12\rapi.review.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17validate/validate.proto\"\x86\x03\n" +
+	"\x16review/v1/review.proto\x12\rapi.review.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17validate/validate.proto\"\x8b\x03\n" +
 	"\x0fCreateReviewReq\x12\x1f\n" +
 	"\x06userId\x18\x01 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\x06userId\x12!\n" +
-	"\aorderId\x18\x02 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\aorderId\x12'\n" +
-	"\x05score\x18\x03 \x01(\x05B\x11\xfaB\x0e\x1a\f0\x000\x010\x020\x030\x040\x05R\x05score\x125\n" +
-	"\fserviceScore\x18\x04 \x01(\x05B\x11\xfaB\x0e\x1a\f0\x000\x010\x020\x030\x040\x05R\fserviceScore\x125\n" +
-	"\fexpressScore\x18\x05 \x01(\x05B\x11\xfaB\x0e\x1a\f0\x000\x010\x020\x030\x040\x05R\fexpressScore\x12$\n" +
-	"\acontent\x18\x06 \x01(\tB\n" +
+	"\aorderId\x18\x02 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\aorderId\x12!\n" +
+	"\astoreID\x18\x03 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\astoreID\x12'\n" +
+	"\x05score\x18\x04 \x01(\x05B\x11\xfaB\x0e\x1a\f0\x000\x010\x020\x030\x040\x05R\x05score\x125\n" +
+	"\fserviceScore\x18\x05 \x01(\x05B\x11\xfaB\x0e\x1a\f0\x000\x010\x020\x030\x040\x05R\fserviceScore\x125\n" +
+	"\fexpressScore\x18\x06 \x01(\x05B\x11\xfaB\x0e\x1a\f0\x000\x010\x020\x030\x040\x05R\fexpressScore\x12$\n" +
+	"\acontent\x18\a \x01(\tB\n" +
 	"\xfaB\ar\x05\x10\b\x18\xff\x01R\acontent\x12\x18\n" +
-	"\apicInfo\x18\a \x01(\tR\apicInfo\x12\x1c\n" +
-	"\tvideoInfo\x18\b \x01(\tR\tvideoInfo\x12\x1c\n" +
-	"\tvoiceInfo\x18\t \x01(\tR\tvoiceInfo\x12\x1c\n" +
-	"\tanonymous\x18\n" +
-	" \x01(\bR\tanonymous\"-\n" +
+	"\apicInfo\x18\b \x01(\tR\apicInfo\x12\x1c\n" +
+	"\tvideoInfo\x18\t \x01(\tR\tvideoInfo\x12\x1c\n" +
+	"\tanonymous\x18\v \x01(\bR\tanonymous\"-\n" +
 	"\x0fCreateReviewRsp\x12\x1a\n" +
 	"\breviewId\x18\x01 \x01(\x03R\breviewId\"\xb6\x01\n" +
 	"\x0eReplyReviewReq\x12#\n" +
