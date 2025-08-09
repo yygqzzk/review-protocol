@@ -19,6 +19,22 @@ service Review {
 		};
 	};
 
+	// C端获取评价详情
+	rpc GetReview (GetReviewReq) returns (GetReviewRsp) {
+		option (google.api.http) = {
+			get: "/v1/review/{reviewID}"
+		};
+	}
+
+	// C端查看userID下所有评价 
+	rpc ListReviewByUserID (ListReviewByUserIDReq) returns (ListReviewByUserIDRsp) {
+		option (google.api.http) = {
+			get: "/v1/{userID}/reviews",
+		};
+	}
+
+	
+
 	// B端回复评价接口
 	rpc ReplyReview (ReplyReviewReq) returns (ReplyReviewRsp) {
 		option (google.api.http) = {
@@ -26,6 +42,31 @@ service Review {
 			body: "*"
 		};
 	};
+
+	// B端申诉评价
+	rpc AppealReview (AppealReviewReq) returns (AppealReviewRsp) {
+		option (google.api.http) = {
+			post: "/v1/review/appeal",
+			body: "*"
+		};
+	}
+
+	// O端审核评价
+	rpc AuditReview (AuditReviewReq) returns (AuditReviewRsp) {
+		option (google.api.http) = {
+			post: "/v1/review/audit",
+			body: "*"
+		};
+	}
+
+	// O端评价申诉审核
+	rpc AuditAppeal (AuditAppealReq) returns (AuditAppealRsp) {
+		option (google.api.http) = {
+			post: "/v1/appeal/audit",
+			body: "*"
+		};
+	}
+
 	
 }
 
@@ -60,4 +101,81 @@ message ReplyReviewReq {
 // 回复评价响应
 message ReplyReviewRsp {
 	int64 replyId = 1;	// 回复评价ID
+}
+
+// 获取评价详情的请求参数
+message GetReviewReq {
+	int64 reviewID = 1 [(validate.rules).int64 = {gt: 0}];
+}
+
+// 获取评价详情的响应
+message GetReviewRsp {
+	ReviewInfo data = 1;
+}
+
+// 评价信息
+message ReviewInfo{
+	int64 reviewID = 1;
+	int64 userID = 2;
+	int64 orderID = 3;
+	int32 score = 4;
+	int32 serviceScore = 5;
+	int32 expressScore = 6;
+	string content = 7;
+	string picInfo = 8;
+	string videoInfo = 9;
+	int32 status = 10;
+}
+
+// 审核评价的请求
+message AuditReviewReq {
+	int64 reviewID = 1 [(validate.rules).int64 = {gt: 0}];
+	int32 status = 2 [(validate.rules).int32 = {gt: 0}];
+	string opUser = 3 [(validate.rules).string = {min_len: 2}];
+	string opReason = 4 [(validate.rules).string = {min_len: 2}];
+	optional string opRemarks = 5;
+}
+
+// 审核评价的返回值
+message AuditReviewRsp{
+}
+
+// AppealReviewRequest 申诉评价的请求参数
+message AppealReviewReq{
+	int64 reviewID = 1 [(validate.rules).int64 = {gt: 0}];
+	int64 storeID = 2 [(validate.rules).int64 = {gt: 0}];
+	string reason = 3 [(validate.rules).string = {min_len: 2, max_len:200}];
+	string content = 4 [(validate.rules).string = {min_len: 2, max_len:200}];
+	string picInfo = 5;
+	string videoInfo = 6;
+}
+
+// 对评价进行申诉的返回值
+message AppealReviewRsp{
+    int64 appealID = 1;
+}
+
+// 对申诉进行审核的请求
+message AuditAppealReq{
+	int64 appealID = 1 [(validate.rules).int64 = {gt: 0}];
+	int64 reviewID = 2 [(validate.rules).int64 = {gt: 0}];
+	int32 status = 3 [(validate.rules).int32 = {gt: 0}];
+	string opUser = 4 [(validate.rules).string = {min_len: 2}];
+	optional string opRemarks = 5;
+}
+
+// 对申诉进行审核的返回值
+message AuditAppealRsp{
+}
+
+// 用户评价列表的请求
+message ListReviewByUserIDReq{
+	int64 userID = 1 [(validate.rules).int64 = {gt: 0}];
+	int32 page = 2 [(validate.rules).int32 = {gt: 0}];
+	int32 size = 3 [(validate.rules).int32 = {gt: 0}];
+}
+
+// 用户评价列表的返回值
+message ListReviewByUserIDRsp{
+	repeated ReviewInfo list = 1;
 }
