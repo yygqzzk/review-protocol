@@ -26,8 +26,8 @@ const (
 // 创建评价请求
 type CreateReviewReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        int64                  `protobuf:"varint,1,opt,name=userId,proto3" json:"userId,omitempty"`             // 用户ID
-	OrderId       int64                  `protobuf:"varint,2,opt,name=orderId,proto3" json:"orderId,omitempty"`           // 订单ID
+	UserID        int64                  `protobuf:"varint,1,opt,name=userID,proto3" json:"userID,omitempty"`             // 用户ID
+	OrderID       int64                  `protobuf:"varint,2,opt,name=orderID,proto3" json:"orderID,omitempty"`           // 订单ID
 	StoreID       int64                  `protobuf:"varint,3,opt,name=storeID,proto3" json:"storeID,omitempty"`           // 商家ID
 	Score         int32                  `protobuf:"varint,4,opt,name=score,proto3" json:"score,omitempty"`               // 评分
 	ServiceScore  int32                  `protobuf:"varint,5,opt,name=serviceScore,proto3" json:"serviceScore,omitempty"` // 服务评分
@@ -70,16 +70,16 @@ func (*CreateReviewReq) Descriptor() ([]byte, []int) {
 	return file_review_v1_review_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CreateReviewReq) GetUserId() int64 {
+func (x *CreateReviewReq) GetUserID() int64 {
 	if x != nil {
-		return x.UserId
+		return x.UserID
 	}
 	return 0
 }
 
-func (x *CreateReviewReq) GetOrderId() int64 {
+func (x *CreateReviewReq) GetOrderID() int64 {
 	if x != nil {
-		return x.OrderId
+		return x.OrderID
 	}
 	return 0
 }
@@ -143,7 +143,7 @@ func (x *CreateReviewReq) GetAnonymous() bool {
 // 创建评价响应
 type CreateReviewRsp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ReviewId      int64                  `protobuf:"varint,1,opt,name=reviewId,proto3" json:"reviewId,omitempty"` // 评价ID
+	ReviewID      int64                  `protobuf:"varint,1,opt,name=reviewID,proto3" json:"reviewID,omitempty"` // 评价ID
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -178,9 +178,9 @@ func (*CreateReviewRsp) Descriptor() ([]byte, []int) {
 	return file_review_v1_review_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreateReviewRsp) GetReviewId() int64 {
+func (x *CreateReviewRsp) GetReviewID() int64 {
 	if x != nil {
-		return x.ReviewId
+		return x.ReviewID
 	}
 	return 0
 }
@@ -188,8 +188,8 @@ func (x *CreateReviewRsp) GetReviewId() int64 {
 // 回复评价请求
 type ReplyReviewReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ReviewId      int64                  `protobuf:"varint,1,opt,name=reviewId,proto3" json:"reviewId,omitempty"`  // 评价ID
-	StoreId       int64                  `protobuf:"varint,2,opt,name=storeId,proto3" json:"storeId,omitempty"`    // 商家ID
+	ReviewID      int64                  `protobuf:"varint,1,opt,name=reviewID,proto3" json:"reviewID,omitempty"`  // 评价ID
+	StoreID       int64                  `protobuf:"varint,2,opt,name=storeID,proto3" json:"storeID,omitempty"`    // 商家ID
 	Content       string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`     // 回复内容
 	PicInfo       string                 `protobuf:"bytes,4,opt,name=picInfo,proto3" json:"picInfo,omitempty"`     // 回复图片
 	VideoInfo     string                 `protobuf:"bytes,5,opt,name=videoInfo,proto3" json:"videoInfo,omitempty"` // 回复视频
@@ -227,16 +227,16 @@ func (*ReplyReviewReq) Descriptor() ([]byte, []int) {
 	return file_review_v1_review_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *ReplyReviewReq) GetReviewId() int64 {
+func (x *ReplyReviewReq) GetReviewID() int64 {
 	if x != nil {
-		return x.ReviewId
+		return x.ReviewID
 	}
 	return 0
 }
 
-func (x *ReplyReviewReq) GetStoreId() int64 {
+func (x *ReplyReviewReq) GetStoreID() int64 {
 	if x != nil {
-		return x.StoreId
+		return x.StoreID
 	}
 	return 0
 }
@@ -265,7 +265,7 @@ func (x *ReplyReviewReq) GetVideoInfo() string {
 // 回复评价响应
 type ReplyReviewRsp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ReplyId       int64                  `protobuf:"varint,1,opt,name=replyId,proto3" json:"replyId,omitempty"` // 回复评价ID
+	ReplyID       int64                  `protobuf:"varint,1,opt,name=replyID,proto3" json:"replyID,omitempty"` // 回复评价ID
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -300,9 +300,9 @@ func (*ReplyReviewRsp) Descriptor() ([]byte, []int) {
 	return file_review_v1_review_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ReplyReviewRsp) GetReplyId() int64 {
+func (x *ReplyReviewRsp) GetReplyID() int64 {
 	if x != nil {
-		return x.ReplyId
+		return x.ReplyID
 	}
 	return 0
 }
@@ -984,8 +984,8 @@ const file_review_v1_review_proto_rawDesc = "" +
 	"\n" +
 	"\x16review/v1/review.proto\x12\rapi.review.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17validate/validate.proto\"\x8b\x03\n" +
 	"\x0fCreateReviewReq\x12\x1f\n" +
-	"\x06userId\x18\x01 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\x06userId\x12!\n" +
-	"\aorderId\x18\x02 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\aorderId\x12!\n" +
+	"\x06userID\x18\x01 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\x06userID\x12!\n" +
+	"\aorderID\x18\x02 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\aorderID\x12!\n" +
 	"\astoreID\x18\x03 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\astoreID\x12'\n" +
 	"\x05score\x18\x04 \x01(\x05B\x11\xfaB\x0e\x1a\f0\x000\x010\x020\x030\x040\x05R\x05score\x125\n" +
 	"\fserviceScore\x18\x05 \x01(\x05B\x11\xfaB\x0e\x1a\f0\x000\x010\x020\x030\x040\x05R\fserviceScore\x125\n" +
@@ -996,16 +996,16 @@ const file_review_v1_review_proto_rawDesc = "" +
 	"\tvideoInfo\x18\t \x01(\tR\tvideoInfo\x12\x1c\n" +
 	"\tanonymous\x18\v \x01(\bR\tanonymous\"-\n" +
 	"\x0fCreateReviewRsp\x12\x1a\n" +
-	"\breviewId\x18\x01 \x01(\x03R\breviewId\"\xb6\x01\n" +
+	"\breviewID\x18\x01 \x01(\x03R\breviewID\"\xb6\x01\n" +
 	"\x0eReplyReviewReq\x12#\n" +
-	"\breviewId\x18\x01 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\breviewId\x12!\n" +
-	"\astoreId\x18\x02 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\astoreId\x12$\n" +
+	"\breviewID\x18\x01 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\breviewID\x12!\n" +
+	"\astoreID\x18\x02 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\astoreID\x12$\n" +
 	"\acontent\x18\x03 \x01(\tB\n" +
 	"\xfaB\ar\x05\x10\x02\x18\xff\x01R\acontent\x12\x18\n" +
 	"\apicInfo\x18\x04 \x01(\tR\apicInfo\x12\x1c\n" +
 	"\tvideoInfo\x18\x05 \x01(\tR\tvideoInfo\"*\n" +
 	"\x0eReplyReviewRsp\x12\x18\n" +
-	"\areplyId\x18\x01 \x01(\x03R\areplyId\"3\n" +
+	"\areplyID\x18\x01 \x01(\x03R\areplyID\"3\n" +
 	"\fGetReviewReq\x12#\n" +
 	"\breviewID\x18\x01 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\breviewID\"=\n" +
 	"\fGetReviewRsp\x12-\n" +

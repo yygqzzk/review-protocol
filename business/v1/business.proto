@@ -31,8 +31,8 @@ service Business {
 
 // 回复评价请求
 message ReplyReviewReq {
-	int64 reviewId = 1 [(validate.rules).int64 = {gt: 0}];	// 评价ID
-	int64 storeId = 2 [(validate.rules).int64 = {gt: 0}];	// 商家ID
+	int64 reviewID = 1 [(validate.rules).int64 = {gt: 0}];	// 评价ID
+	int64 storeID = 2 [(validate.rules).int64 = {gt: 0}];	// 商家ID
 	string content = 3 [(validate.rules).string = {min_len: 2, max_len: 255}];	// 回复内容
 	string picInfo = 4;	// 回复图片
 	string videoInfo = 5;	// 回复视频
@@ -40,7 +40,7 @@ message ReplyReviewReq {
 
 // 回复评价响应
 message ReplyReviewRsp {
-	int64 replyId = 1;	// 回复评价ID
+	int64 replyID = 1;	// 回复评价ID
 }
 
 // AppealReviewRequest 申诉评价的请求参数
