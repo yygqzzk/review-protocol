@@ -9,7 +9,7 @@ option go_package = "github.com/yygqzzk/review-b/api/business/v1;v1";
 option java_multiple_files = true;
 option java_package = "api.business.v1";
 
-
+// B端评价服务
 service Business {
     // 商家回复评论
     rpc ReplyReview(ReplyReviewReq) returns (ReplyReviewRsp) {

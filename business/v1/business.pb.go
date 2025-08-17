@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v6.31.1
-// source: api/business/v1/business.proto
+// source: business/v1/business.proto
 
 package v1
 
@@ -37,7 +37,7 @@ type ReplyReviewReq struct {
 
 func (x *ReplyReviewReq) Reset() {
 	*x = ReplyReviewReq{}
-	mi := &file_api_business_v1_business_proto_msgTypes[0]
+	mi := &file_business_v1_business_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49,7 +49,7 @@ func (x *ReplyReviewReq) String() string {
 func (*ReplyReviewReq) ProtoMessage() {}
 
 func (x *ReplyReviewReq) ProtoReflect() protoreflect.Message {
-	mi := &file_api_business_v1_business_proto_msgTypes[0]
+	mi := &file_business_v1_business_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -62,7 +62,7 @@ func (x *ReplyReviewReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReplyReviewReq.ProtoReflect.Descriptor instead.
 func (*ReplyReviewReq) Descriptor() ([]byte, []int) {
-	return file_api_business_v1_business_proto_rawDescGZIP(), []int{0}
+	return file_business_v1_business_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ReplyReviewReq) GetReviewID() int64 {
@@ -110,7 +110,7 @@ type ReplyReviewRsp struct {
 
 func (x *ReplyReviewRsp) Reset() {
 	*x = ReplyReviewRsp{}
-	mi := &file_api_business_v1_business_proto_msgTypes[1]
+	mi := &file_business_v1_business_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -122,7 +122,7 @@ func (x *ReplyReviewRsp) String() string {
 func (*ReplyReviewRsp) ProtoMessage() {}
 
 func (x *ReplyReviewRsp) ProtoReflect() protoreflect.Message {
-	mi := &file_api_business_v1_business_proto_msgTypes[1]
+	mi := &file_business_v1_business_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -135,7 +135,7 @@ func (x *ReplyReviewRsp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReplyReviewRsp.ProtoReflect.Descriptor instead.
 func (*ReplyReviewRsp) Descriptor() ([]byte, []int) {
-	return file_api_business_v1_business_proto_rawDescGZIP(), []int{1}
+	return file_business_v1_business_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ReplyReviewRsp) GetReplyID() int64 {
@@ -160,7 +160,7 @@ type AppealReviewReq struct {
 
 func (x *AppealReviewReq) Reset() {
 	*x = AppealReviewReq{}
-	mi := &file_api_business_v1_business_proto_msgTypes[2]
+	mi := &file_business_v1_business_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -172,7 +172,7 @@ func (x *AppealReviewReq) String() string {
 func (*AppealReviewReq) ProtoMessage() {}
 
 func (x *AppealReviewReq) ProtoReflect() protoreflect.Message {
-	mi := &file_api_business_v1_business_proto_msgTypes[2]
+	mi := &file_business_v1_business_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -185,7 +185,7 @@ func (x *AppealReviewReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppealReviewReq.ProtoReflect.Descriptor instead.
 func (*AppealReviewReq) Descriptor() ([]byte, []int) {
-	return file_api_business_v1_business_proto_rawDescGZIP(), []int{2}
+	return file_business_v1_business_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *AppealReviewReq) GetReviewID() int64 {
@@ -239,7 +239,7 @@ type AppealReviewRsp struct {
 
 func (x *AppealReviewRsp) Reset() {
 	*x = AppealReviewRsp{}
-	mi := &file_api_business_v1_business_proto_msgTypes[3]
+	mi := &file_business_v1_business_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -251,7 +251,7 @@ func (x *AppealReviewRsp) String() string {
 func (*AppealReviewRsp) ProtoMessage() {}
 
 func (x *AppealReviewRsp) ProtoReflect() protoreflect.Message {
-	mi := &file_api_business_v1_business_proto_msgTypes[3]
+	mi := &file_business_v1_business_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -264,7 +264,7 @@ func (x *AppealReviewRsp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppealReviewRsp.ProtoReflect.Descriptor instead.
 func (*AppealReviewRsp) Descriptor() ([]byte, []int) {
-	return file_api_business_v1_business_proto_rawDescGZIP(), []int{3}
+	return file_business_v1_business_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *AppealReviewRsp) GetAppealID() int64 {
@@ -274,11 +274,11 @@ func (x *AppealReviewRsp) GetAppealID() int64 {
 	return 0
 }
 
-var File_api_business_v1_business_proto protoreflect.FileDescriptor
+var File_business_v1_business_proto protoreflect.FileDescriptor
 
-const file_api_business_v1_business_proto_rawDesc = "" +
+const file_business_v1_business_proto_rawDesc = "" +
 	"\n" +
-	"\x1eapi/business/v1/business.proto\x12\x0fapi.business.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17validate/validate.proto\"\xb6\x01\n" +
+	"\x1abusiness/v1/business.proto\x12\x0fapi.business.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17validate/validate.proto\"\xb6\x01\n" +
 	"\x0eReplyReviewReq\x12#\n" +
 	"\breviewID\x18\x01 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\breviewID\x12!\n" +
 	"\astoreID\x18\x02 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\astoreID\x12$\n" +
@@ -305,25 +305,25 @@ const file_api_business_v1_business_proto_rawDesc = "" +
 	"\x0fapi.business.v1P\x01Z.github.com/yygqzzk/review-b/api/business/v1;v1b\x06proto3"
 
 var (
-	file_api_business_v1_business_proto_rawDescOnce sync.Once
-	file_api_business_v1_business_proto_rawDescData []byte
+	file_business_v1_business_proto_rawDescOnce sync.Once
+	file_business_v1_business_proto_rawDescData []byte
 )
 
-func file_api_business_v1_business_proto_rawDescGZIP() []byte {
-	file_api_business_v1_business_proto_rawDescOnce.Do(func() {
-		file_api_business_v1_business_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_api_business_v1_business_proto_rawDesc), len(file_api_business_v1_business_proto_rawDesc)))
+func file_business_v1_business_proto_rawDescGZIP() []byte {
+	file_business_v1_business_proto_rawDescOnce.Do(func() {
+		file_business_v1_business_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_business_v1_business_proto_rawDesc), len(file_business_v1_business_proto_rawDesc)))
 	})
-	return file_api_business_v1_business_proto_rawDescData
+	return file_business_v1_business_proto_rawDescData
 }
 
-var file_api_business_v1_business_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_api_business_v1_business_proto_goTypes = []any{
+var file_business_v1_business_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_business_v1_business_proto_goTypes = []any{
 	(*ReplyReviewReq)(nil),  // 0: api.business.v1.ReplyReviewReq
 	(*ReplyReviewRsp)(nil),  // 1: api.business.v1.ReplyReviewRsp
 	(*AppealReviewReq)(nil), // 2: api.business.v1.AppealReviewReq
 	(*AppealReviewRsp)(nil), // 3: api.business.v1.AppealReviewRsp
 }
-var file_api_business_v1_business_proto_depIdxs = []int32{
+var file_business_v1_business_proto_depIdxs = []int32{
 	0, // 0: api.business.v1.Business.ReplyReview:input_type -> api.business.v1.ReplyReviewReq
 	2, // 1: api.business.v1.Business.AppealReview:input_type -> api.business.v1.AppealReviewReq
 	1, // 2: api.business.v1.Business.ReplyReview:output_type -> api.business.v1.ReplyReviewRsp
@@ -335,26 +335,26 @@ var file_api_business_v1_business_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_api_business_v1_business_proto_init() }
-func file_api_business_v1_business_proto_init() {
-	if File_api_business_v1_business_proto != nil {
+func init() { file_business_v1_business_proto_init() }
+func file_business_v1_business_proto_init() {
+	if File_business_v1_business_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_api_business_v1_business_proto_rawDesc), len(file_api_business_v1_business_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_business_v1_business_proto_rawDesc), len(file_business_v1_business_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_api_business_v1_business_proto_goTypes,
-		DependencyIndexes: file_api_business_v1_business_proto_depIdxs,
-		MessageInfos:      file_api_business_v1_business_proto_msgTypes,
+		GoTypes:           file_business_v1_business_proto_goTypes,
+		DependencyIndexes: file_business_v1_business_proto_depIdxs,
+		MessageInfos:      file_business_v1_business_proto_msgTypes,
 	}.Build()
-	File_api_business_v1_business_proto = out.File
-	file_api_business_v1_business_proto_goTypes = nil
-	file_api_business_v1_business_proto_depIdxs = nil
+	File_business_v1_business_proto = out.File
+	file_business_v1_business_proto_goTypes = nil
+	file_business_v1_business_proto_depIdxs = nil
 }

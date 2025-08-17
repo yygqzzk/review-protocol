@@ -26,6 +26,8 @@ const (
 // OperationClient is the client API for Operation service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// O端评价服务
 type OperationClient interface {
 	AuditReview(ctx context.Context, in *AuditReviewReq, opts ...grpc.CallOption) (*AuditReviewRsp, error)
 	AuditAppeal(ctx context.Context, in *AuditAppealReq, opts ...grpc.CallOption) (*AuditAppealRsp, error)
@@ -62,6 +64,8 @@ func (c *operationClient) AuditAppeal(ctx context.Context, in *AuditAppealReq, o
 // OperationServer is the server API for Operation service.
 // All implementations must embed UnimplementedOperationServer
 // for forward compatibility.
+//
+// O端评价服务
 type OperationServer interface {
 	AuditReview(context.Context, *AuditReviewReq) (*AuditReviewRsp, error)
 	AuditAppeal(context.Context, *AuditAppealReq) (*AuditAppealRsp, error)

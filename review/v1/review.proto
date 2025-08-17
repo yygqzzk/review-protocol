@@ -9,7 +9,7 @@ option go_package = "review-service/api/review/v1;v1";
 option java_multiple_files = true;
 option java_package = "api.review.v1";
 
-// 定义评价服务
+// 评价服务
 service Review {
 	// 创建评价接口
 	rpc CreateReview (CreateReviewReq) returns (CreateReviewRsp) {
@@ -32,6 +32,9 @@ service Review {
 			get: "/v1/{userID}/reviews",
 		};
 	}
+
+	// C端根据店铺Id分页查询评价
+	rpc ListReviewByStoreID (ListReviewByStoreIDReq) returns (ListReviewByStoreIDRsp) {}
 
 	
 
@@ -66,6 +69,8 @@ service Review {
 			body: "*"
 		};
 	}
+
+	
 
 	
 }
@@ -124,7 +129,6 @@ message ReviewInfo{
 	string content = 7;
 	string picInfo = 8;
 	string videoInfo = 9;
-	int32 status = 10;
 }
 
 // 审核评价的请求
@@ -177,5 +181,15 @@ message ListReviewByUserIDReq{
 
 // 用户评价列表的返回值
 message ListReviewByUserIDRsp{
+	repeated ReviewInfo list = 1;
+}
+
+message ListReviewByStoreIDReq {
+	int64 storeID = 1 [(validate.rules).int64 = {gt: 0}];
+	int32 page = 2 [(validate.rules).int32 = {gt: 0}];
+	int32 size = 3 [(validate.rules).int32 = {gt: 0}];
+}
+
+message ListReviewByStoreIDRsp {
 	repeated ReviewInfo list = 1;
 }

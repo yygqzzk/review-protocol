@@ -26,6 +26,8 @@ const (
 // BusinessClient is the client API for Business service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// B端评价服务
 type BusinessClient interface {
 	// 商家回复评论
 	ReplyReview(ctx context.Context, in *ReplyReviewReq, opts ...grpc.CallOption) (*ReplyReviewRsp, error)
@@ -64,6 +66,8 @@ func (c *businessClient) AppealReview(ctx context.Context, in *AppealReviewReq, 
 // BusinessServer is the server API for Business service.
 // All implementations must embed UnimplementedBusinessServer
 // for forward compatibility.
+//
+// B端评价服务
 type BusinessServer interface {
 	// 商家回复评论
 	ReplyReview(context.Context, *ReplyReviewReq) (*ReplyReviewRsp, error)
